@@ -39,3 +39,9 @@ class ProductPage(BasePage):
         basket_total = self.browser.find_element(*ProductPageLocators.BASKET_TOTAL)
         assert f'Basket total: {book_price}' in basket_total.text
 
+    def should_not_be_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGES)
+
+    def should_message_disappear(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGES)
+
