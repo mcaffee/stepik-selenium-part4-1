@@ -17,3 +17,8 @@ class ProductPageLocators:
     BASKET_TOTAL = (By.CSS_SELECTOR, 'div.basket-mini.pull-right.hidden-xs')
     BOOK_TITLE = (By.CSS_SELECTOR, "#content_inner > article > div.row > div.col-sm-6.product_main > h1")
     BOOK_PRICE = (By.CSS_SELECTOR, "#content_inner > article > div.row > div.col-sm-6.product_main > p.price_color")
+
+class BasketPageLocators:
+    BASKET_LINK = (By.CSS_SELECTOR, 'div.basket-mini.pull-right.hidden-xs > span > a')
+    ITEM_ROWS = (By.CSS_SELECTOR, '#basket_formset > div > div')
+    BASKET_EMPTY_MESSAGE = (By.CSS_SELECTOR, '#content_inner > p')
