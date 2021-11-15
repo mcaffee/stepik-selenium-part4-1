@@ -4,6 +4,10 @@ from .locators import ProductPageLocators
 
 class ProductPage(BasePage):
 
+    def go_to_login_page(self):
+        login_link = self.browser.find_element(*ProductPageLocators.LOGIN_LINK)
+        login_link.click()
+
     def add_to_basket(self):
         add_button = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON)
         add_button.click()
@@ -23,6 +27,10 @@ class ProductPage(BasePage):
             if text in m.text:
                 return True
         return False
+
+    def should_be_login_link(self):
+        assert self.is_element_present(*ProductPageLocators.LOGIN_LINK), \
+            'Login link not found'
 
     def should_be_added_message(self, book_title):
         assert self.is_message_present(f'{book_title} has been added to your basket.')

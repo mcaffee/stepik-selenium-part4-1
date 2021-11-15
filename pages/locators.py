@@ -11,6 +11,7 @@ class LoginPageLocators:
 
 
 class ProductPageLocators:
+    LOGIN_LINK = MainPageLocators.LOGIN_LINK
     ADD_TO_BASKET_BUTTON = (By.XPATH, '//*[@id="add_to_basket_form"]/button')
     SUCCESS_MESSAGES = (By.CSS_SELECTOR, "#messages > div.alert-success")
     BASKET_TOTAL = (By.CSS_SELECTOR, 'div.basket-mini.pull-right.hidden-xs')
